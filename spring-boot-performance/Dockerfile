@@ -1,14 +1,10 @@
-FROM adoptopenjdk/openjdk11:x86_64-alpine-jdk-11.0.5_10-slim as builder
+FROM gradle:latest as builder
 
 WORKDIR /src
 COPY src ./src/
-COPY gradle ./gradle/
 COPY build.gradle ./
-COPY gradlew ./
 COPY settings.gradle ./
-#COPY gradle.properties ./
-RUN chmod 777 ./gradlew
-RUN ./gradlew clean build --exclude-task testClasses
+RUN gradle clean build --info --exclude-task testClasses
 
 ##
 #  Second Stage
