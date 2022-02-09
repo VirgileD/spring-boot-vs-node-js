@@ -3,7 +3,7 @@ const util = require('util');
 
 const log_stdout = process.stdout;
 const morgan = require('morgan')
-const uuid = require('node-uuid')
+const uuid = require('uuid')
 const path = require('path')
 const appDir = path.dirname(require.main.filename);
 

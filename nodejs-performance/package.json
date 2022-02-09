@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "dev": "NODE_ENV=development node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,8 +16,8 @@
     "express-validator": "^6.9.2",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
-    "node-uuid": "^1.4.8",
     "pg": "^8.5.1",
-    "randomstring": "^1.1.5"
+    "randomstring": "^1.1.5",
+    "uuid": "^8.3.2"
   }
 }
