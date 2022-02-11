@@ -18,4 +18,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD ["pm2-runtime", "pm2-process.yml"]
+CMD ["pm2-runtime", "ecosystem.config.js"]

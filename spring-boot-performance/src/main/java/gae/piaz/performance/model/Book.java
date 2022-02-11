@@ -5,7 +5,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 
 @Entity
@@ -29,8 +28,5 @@ public class Book implements Serializable {
     private String title;
 
     private Integer year;
-
-    @OneToMany(mappedBy = "book")
-    private List<Order> orders;
 
 }
