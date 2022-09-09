@@ -40,7 +40,7 @@ const login = (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
 
-    if (username === usernameconfig && password === passwordconfig) {
+    if (password === passwordconfig) {
         let token = jwt.sign({username: username},
             jwtSecret,
             {
@@ -54,9 +54,9 @@ const login = (req, res) => {
             token: token
         });
     } else {
-        res.send(403).json({
+        res.sendStatus(403).json({
             success: false,
-            message: 'Incorrect username or password'
+            message: 'Incorrect password'
         });
     }
 

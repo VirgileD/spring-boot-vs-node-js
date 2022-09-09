@@ -2,7 +2,7 @@ const Pool = require('pg').Pool
 
 const pool = new Pool({
     user: 'postgres',
-    host: process.env.IS_DOCKER ? 'db-service' : "localhost",
+    host: process.env.IS_DOCKER ? 'bench-node-spring-db-service' : "localhost",
     database: 'postgres',
     password: 'postgres',
     port: 5432

@@ -24,7 +24,7 @@ public class LoginController {
     @PostMapping
     public ResponseEntity<String> login(@RequestBody @Valid LoginDTO request) {
 
-        if(!request.getUsername().equals("username") && !request.getPassword().equals("password"))
+        if(!request.getPassword().equals("password"))
         {
             return ResponseEntity.status(401).body("");
         }

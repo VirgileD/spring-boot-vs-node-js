@@ -3,18 +3,17 @@ version: '3.1'
 services:
 
   db-service:
-    container_name: db-service
+    container_name: bench-node-spring-db-service
     build:
-      context: ../db
-    restart: always
+      context: ./db
     env_file:
-      - ../db/.env
+      - ./db/.env
     ports:
       - "5432:5432"
     deploy:
       resources:
         limits:
-          cpus: "1"
+          cpus: "0.5"
           memory: 250M
         reservations:
           memory: 250M
@@ -29,9 +28,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "4"
+          cpus: "2"
           memory: 1G
         reservations:
           memory: 1G
-          cpus: "4"
-    restart: always
+          cpus: "2"

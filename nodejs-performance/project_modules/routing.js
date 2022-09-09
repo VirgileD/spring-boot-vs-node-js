@@ -1,4 +1,4 @@
-const db = require('./db')
+const db = require('./db_async1')
 const { body, validationResult } = require('express-validator');
 const jwt = require('./jwt');
 const cpuIntensive = require('./cpuIntensive')
@@ -19,7 +19,8 @@ const configure = (app) => {
                 return res.status(400).json({ errors: errors.array() });
             }
             jwt.login(req,res)
-        });
+        }
+    );
 
     app.get('/books', jwt.checkToken, db.getBooks)
 

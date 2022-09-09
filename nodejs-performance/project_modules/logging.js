@@ -10,7 +10,7 @@ const appDir = path.dirname(require.main.filename);
 const log_file = fs.createWriteStream(appDir + '/access.log', {flags : 'a'});
 
 console.log = function(id, d) { //
-    const msg = (id? id : '-') + ' '+ new Date() + ' ' + util.format(d) + '\n';
+    const msg = (id? id : '-') + ' ['+ new Date().toISOString().split('.')[0].replace('T', '-') + '] ' + util.format(d) + '\n';
     log_file.write(msg);
     log_stdout.write(msg);
 };
